@@ -15,8 +15,9 @@ connect = pymysql.connect(
 )
 
 cursor = connect.cursor()
-createDBsql = 'create database if not exist %s'
-cursor.execute(sql)
+db = 'test'
+createDBsql = 'create database if not exist %s'%db
+cursor.execute(createDBsql)
 db = cursor.fetchall()
 print(db)
 connect.commit()
